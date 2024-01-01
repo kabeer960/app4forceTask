@@ -1,6 +1,7 @@
 const { handleResponse } = require('../utils/responses.js');
 const {Task } = require('../models')
 
+//  craete a task
 exports.createTask = (req, res) => {
   const body = req.body;
   const user = req.user;
@@ -21,6 +22,7 @@ exports.createTask = (req, res) => {
   
 };
 
+// read all Tasks
 exports.readTasks = (req, res) => {
   try{
     Task.findAll().then((task) => {
@@ -33,6 +35,7 @@ exports.readTasks = (req, res) => {
  
 };
 
+// Delete a Task
 exports.deleteTask = (req, res) => {
   const body = req.body;
   try{
@@ -47,6 +50,7 @@ exports.deleteTask = (req, res) => {
   } 
 };
 
+// Update a Task
 exports.updateTask = (req, res) => {
   const body = req.body;
   try{
@@ -70,6 +74,7 @@ exports.updateTask = (req, res) => {
   } 
 }
 
+// Assign a Task to a User
 exports.assignTask = (req, res) => {
   const body = req.body;
   try{
